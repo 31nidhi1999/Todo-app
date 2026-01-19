@@ -17,7 +17,7 @@ export default class TodoService extends Service{
     }
 
     @action
-    toggleTodo(){
+    toggleTodo(id){
         this.todos = this.todos.map(todo => todo.id === id ? {...todo,completed : !todo.completed} : todo);
     }
 }

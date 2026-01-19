@@ -1,19 +1,9 @@
 {{#if this.todoService.todos.length}}
   <div class="todo-section">
-    <h3>Active</h3>
-    {{#each this.todoService.activeTodos as |todo|}}
+    {{#each this.todoService.todos as |todo|}}
       <TodoItem @todo={{todo}} />
     {{/each}}
   </div>
-
-  {{#if this.todoService.completedTodos.length}}
-    <div class="todo-section completed">
-      <h3>Completed</h3>
-      {{#each this.todoService.completedTodos as |todo|}}
-        <TodoItem @todo={{todo}} />
-      {{/each}}
-    </div>
-  {{/if}}
 {{else}}
   <p class="empty-state">
     No tasks yet. Add one to get started.

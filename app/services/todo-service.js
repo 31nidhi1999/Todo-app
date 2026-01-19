@@ -20,12 +20,4 @@ export default class TodoService extends Service{
     toggleTodo(id){
         this.todos = this.todos.map(todo => todo.id === id ? {...todo,completed : !todo.completed} : todo);
     }
-
-    get activeTodos(){
-        return this.todos.filter(todo => !todo.completed);
-    }
-
-    get completedTodos() {
-    return this.todos.filter(todo => todo.completed);
-  }
 }

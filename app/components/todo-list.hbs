@@ -1,0 +1,16 @@
+<div class="todo-list">
+  <h2>My TODOs</h2>
+  <input
+    type="text"
+    placeholder="Add a new task"
+    value={{this.newTodo}}
+    {{on "input" this.updateNewTodo}}
+  />
+  <button type="button" {{on "click" this.addNewTodo}}>Add</button>
+
+  <div class="todos">
+    {{#each this.todoService.todos as |todo|}}
+      <TodoItem @todo={{todo}} />
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="todo-item {{if this.isCompleted 'completed'}}">
+  <input type="checkbox" checked={{this.isCompleted}} {{on "change" this.toggle}} />
+  <span>{{@todo.title}}</span>
+  <button type="button" {{on "click" this.delete}}>Delete</button>
+</div>

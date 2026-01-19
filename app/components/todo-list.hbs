@@ -1,16 +1,21 @@
-<div class="todo-list">
-  <h2>My TODOs</h2>
-  <input
-    type="text"
-    placeholder="Add a new task"
-    value={{this.newTodo}}
-    {{on "input" this.updateNewTodo}}
-  />
-  <button type="button" {{on "click" this.addNewTodo}}>Add</button>
-
-  <div class="todos">
-    {{#each this.todoService.todos as |todo|}}
+{{#if this.todoService.todos.length}}
+  <div class="todo-section">
+    <h3>Active</h3>
+    {{#each this.todoService.activeTodos as |todo|}}
       <TodoItem @todo={{todo}} />
     {{/each}}
   </div>
-</div>
+
+  {{#if this.todoService.completedTodos.length}}
+    <div class="todo-section completed">
+      <h3>Completed</h3>
+      {{#each this.todoService.completedTodos as |todo|}}
+        <TodoItem @todo={{todo}} />
+      {{/each}}
+    </div>
+  {{/if}}
+{{else}}
+  <p class="empty-state">
+    No tasks yet. Add one to get started.
+  </p>
+{{/if}}

@@ -6,10 +6,6 @@ import { action } from "@ember/object";
 export default class TodoItemComponent extends Component {
     @service('todo-service') todoService;
 
-    get isCompleted() {
-        return this.args.todo.completed;
-    }
-
     @action
     toggle() {
         this.todoService.toggleTodo(this.args.todo.id);

@@ -1,0 +1,10 @@
+<form class="todo-input" {{on "submit" this.submit}}>
+  <input
+    type="text"
+    placeholder="Add a new task…"
+    value={{this.newTodo}}
+    {{on "input" this.updateNewTodo}}
+    aria-label="New task"
+  />
+  <button type="submit" {{on "click" this.submit}}>Add</button>
+</form>

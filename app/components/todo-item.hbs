@@ -1,5 +1,19 @@
-<div class="todo-item {{if this.isCompleted 'completed'}}">
-  <input type="checkbox" checked={{this.isCompleted}} {{on "change" this.toggle}} />
-  <span>{{@todo.title}}</span>
-  <button type="button" {{on "click" this.delete}}>Delete</button>
+<div class="todo-item {{if @todo.completed 'done'}}">
+  <label>
+    <input
+      type="checkbox"
+      checked={{@todo.completed}}
+      {{on "change" this.toggle}}
+    />
+    <span>{{@todo.title}}</span>
+  </label>
+
+  <button
+    type="button"
+    class="delete"
+    {{on "click" this.delete}}
+    aria-label="Delete task"
+  >
+    ✕
+  </button>
 </div>

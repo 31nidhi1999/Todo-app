@@ -1,15 +1,24 @@
-.todo-list {
-  width: 400px;
-  margin: 50px auto;
-  font-family: sans-serif;
+body {
+  background: #f4f6f8;
+  font-family: system-ui, sans-serif;
 }
+
+.app-card {
+  max-width: 480px;
+  margin: 4rem auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
 
 .todo-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+  padding: 0.6rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
 }
 
 .todo-item.completed span {
@@ -19,4 +28,19 @@
 
 button {
   cursor: pointer;
+}
+
+.todo-item:hover {
+  background: #f1f5f9;
+}
+
+.todo-item.done span {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  margin-top: 2rem;
 }

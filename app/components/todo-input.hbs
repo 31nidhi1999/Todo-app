@@ -1,10 +1,9 @@
-<form class="todo-input" {{on "submit" this.submit}}>
-  <input
-    type="text"
-    placeholder="Add a new task…"
-    value={{this.newTodo}}
-    {{on "input" this.updateNewTodo}}
-    aria-label="New task"
-  />
-  <button type="submit" {{on "click" this.submit}}>Add</button>
-</form>
+<div class="input-row">
+  <div class="field">
+    <label>Task Title :  </label>
+    <input type="text" placeholder="Add a new task…" value={{this.newTodo}} {{on "input" this.updateNewTodo}}
+      aria-label="New task" />
+  </div>
+
+  <button class="add-btn" {{on "click" this.submit}}>Add Todo</button>
+</div>

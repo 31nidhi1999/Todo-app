@@ -12,7 +12,7 @@ module('Integration | Component | todo-input', function (hooks){
         await render(hbs`<TodoInput/>`);
 
         await fillIn('input[aria-label="New task"]','New Task');
-        await click('button[type="submit"]');
+        await click('button[class="add-btn"]');
 
         assert.strictEqual(service.todos.length,1);
         assert.strictEqual(service.todos[0].title, 'New Task');
